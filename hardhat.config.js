@@ -8,7 +8,8 @@ module.exports = {
   etherscan: {
     apiKey: {
       polygon: secret.POLYGON_SCAN_KEY,
-      avalanche: secret.SNOWTRACE_KEY
+      avalanche: secret.SNOWTRACE_KEY,
+      opera: secret.FTM_SCAN_KEY
     }
   },
   networks: {
@@ -34,7 +35,7 @@ module.exports = {
         }
       }
     },
-    fantom: {
+    opera: {
       // truffle deploy --network fantom
       url: `https://rpc.ankr.com/fantom`,
       accounts: [secret.MMENOMIC],
