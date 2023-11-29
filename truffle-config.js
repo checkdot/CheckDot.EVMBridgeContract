@@ -6,7 +6,8 @@ module.exports = {
   api_keys: {
     bscscan: secret.API_KEY,
     etherscan: secret.ETHER_SCAN_API_KEY,
-    arbiscan: secret.ARBI_SCAN_API_KEY
+    arbiscan: secret.ARBI_SCAN_API_KEY,
+    base: secret.BASE_KEY
   },
   networks: {
     development: {
@@ -58,6 +59,13 @@ module.exports = {
       confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: true
+    },
+    base: {
+      // https://infura.io/dashboard/ethereum
+      // truffle deploy --network base
+      provider: () => new HDWalletProvider(secret.MMENOMIC, `https://mainnet.base.org`),
+      network_id: 8453,      // Mainnet id
+      gas: 5500000
     }
   },
   compilers: {

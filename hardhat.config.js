@@ -9,7 +9,8 @@ module.exports = {
     apiKey: {
       polygon: secret.POLYGON_SCAN_KEY,
       avalanche: secret.SNOWTRACE_KEY,
-      opera: secret.FTM_SCAN_KEY
+      opera: secret.FTM_SCAN_KEY,
+      optimisticEthereum: secret.OP_SCAN_KEY
     }
   },
   networks: {
@@ -32,6 +33,17 @@ module.exports = {
       verify: {
         etherscan: {
           apiUrl: 'https://api.snowtrace.io'
+        }
+      }
+    },
+    optimisticEthereum: {
+      chainId: 10,
+      // truffle deploy --network avax
+      url: `https://optimism.llamarpc.com`,
+      accounts: [secret.MMENOMIC],
+      verify: {
+        etherscan: {
+          apiUrl: 'https://api.optimistic.etherscan.io/'
         }
       }
     },
